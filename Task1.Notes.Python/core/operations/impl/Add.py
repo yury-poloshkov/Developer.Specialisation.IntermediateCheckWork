@@ -14,6 +14,10 @@ class Add(Operation):
         print("----- Создание новой заметки -----")
         note_topic = input("Введите тему: ")
         note_body = input("Введите содержание: ")
+        records = read_all(path)
+        # if records != null:
+        #     last_note = JSONmapper.from_json(records.pop)
+
         index = str(1)
         today = str(date.today())
         note = Note(index, today, note_topic, note_body)

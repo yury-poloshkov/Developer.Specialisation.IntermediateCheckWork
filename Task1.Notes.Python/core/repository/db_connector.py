@@ -22,5 +22,5 @@ def save_all(path, notes):
 
 def save_note(path, new_note):
     file = open(path, 'a')
-    file.write(new_note + "\n")
+    file.write("\n" + new_note)
     file.close()    
