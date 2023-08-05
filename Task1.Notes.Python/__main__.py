@@ -1,4 +1,4 @@
-from core.db_connector import create
+from core.repository.db_connector import create
 from ui.note_view import show_menu
 
 from core.operations.impl.Add import Add
@@ -9,7 +9,7 @@ from core.operations.impl.List import List
 from core.operations.impl.Read import Read
 from core.operations.Operation import Operation
 
-path = "notes.txt"
+# path = "notes.txt"
 
 def init_functions(operations):
     operations.append(Add())
@@ -21,6 +21,10 @@ def init_functions(operations):
     operations.append(Operation())
 
 def main():
+    print("\033[H\033[J", end="")
+    path = input("Введите имя Вашей записной книжки: ") + ".json"
+    if path == ".json":
+        path = "notes.txt" 
     create(path)
     operations = []
     init_functions(operations)

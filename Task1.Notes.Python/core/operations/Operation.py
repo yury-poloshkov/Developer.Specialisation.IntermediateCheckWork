@@ -1,4 +1,4 @@
 class Operation:
     operation = "exit"
     def execute(self, path):
-        print("----- Завершение работы приложения с %s -----" %path)
+        print("\n----- Завершение работы приложения с %s -----\n" %path)

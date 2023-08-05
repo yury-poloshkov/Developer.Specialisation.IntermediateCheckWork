@@ -1,5 +1,7 @@
+from core.repository.JSONmapper import JSONmapper
+from core.repository.Note import Note
 from ..Operation import Operation
-from ...db_connector import *
+from ...repository.db_connector import *
 
 from datetime import date
 
@@ -14,5 +16,5 @@ class Add(Operation):
         note_body = input("Введите содержание: ")
         index = str(1)
         today = str(date.today())
-        note = index + "; " + today + "; " + note_topic + "; " + note_body
-        save_note(path, note)
+        note = Note(index, today, note_topic, note_body)
+        save_note(path, JSONmapper.to_json(note))

@@ -1,5 +1,5 @@
 from ..Operation import Operation
-from ...db_connector import *
+from ...repository.db_connector import *
 
 from datetime import date
 

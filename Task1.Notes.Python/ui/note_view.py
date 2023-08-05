@@ -3,8 +3,8 @@ def show_menu(path, operations):
     while user_choice != "exit":
         print("\033[H\033[J", end="")
         print("----- Записная книжка v.2023.07.28 -----")
-        print("Connected DB: " + path)
-        print("----- ГЛАВНОЕ МЕНЮ --- ")
+        print("Connected NoteBook: " + path + "\n")
+        print("----- ГЛАВНОЕ МЕНЮ -----")
         # for i in range(0, len(operations)): 
         for operation in operations:
             print("  " + operation.operation.upper())

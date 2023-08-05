@@ -22,6 +22,5 @@ def save_all(path, notes):
 
 def save_note(path, new_note):
     file = open(path, 'a')
-    # create index for record & mapping to JSON???
     file.write(new_note + "\n")
-    file.close()
+    file.close()    
