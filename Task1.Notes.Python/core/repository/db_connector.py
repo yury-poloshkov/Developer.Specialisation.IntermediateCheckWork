@@ -11,7 +11,7 @@ def read_all(path):
     file = open(path, 'r')
     notes = list()
     for line in file:
-        notes.append(line[:-1])
+        notes.append(line)
     file.close()
     return notes
 

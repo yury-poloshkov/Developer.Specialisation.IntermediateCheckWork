@@ -4,3 +4,7 @@ class Note:
         self.date = date
         self.title = title
         self.body = body
+
+    def __str__(self):
+        return (self.index + "\t" + self.date + "\t" + self.title + 
+                 "\n" + self.body)

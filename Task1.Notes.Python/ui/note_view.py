@@ -5,10 +5,14 @@ def show_menu(path, operations):
         print("----- Записная книжка v.2023.07.28 -----")
         print("Connected NoteBook: " + path + "\n")
         print("----- ГЛАВНОЕ МЕНЮ -----")
-        # for i in range(0, len(operations)): 
         for operation in operations:
             print("  " + operation.operation.upper())
         user_choice = input("\Введите команду> ").lower()
         for operation in operations:
             if operation.operation == user_choice:
                 operation.execute(path)
+                if operation.operation != "exit":
+                    timeout()
+
+def timeout():
+    input("\nPress ENTER to continue...\n")

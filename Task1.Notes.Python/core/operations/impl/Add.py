@@ -17,4 +17,8 @@ class Add(Operation):
         index = str(1)
         today = str(date.today())
         note = Note(index, today, note_topic, note_body)
-        save_note(path, JSONmapper.to_json(note))
+        try:
+            save_note(path, JSONmapper.to_json(note))
+            print("Информация успешно сохранена в " + path)
+        except IOError:
+            print("ERROR: ошибка сохранения данных")

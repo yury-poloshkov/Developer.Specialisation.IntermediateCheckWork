@@ -9,12 +9,11 @@ from core.operations.impl.List import List
 from core.operations.impl.Read import Read
 from core.operations.Operation import Operation
 
-# path = "notes.txt"
 
 def init_functions(operations):
+    operations.append(List())
     operations.append(Add())
     # operations.append(Read())
-    # operations.append(List())
     # operations.append(Change())
     # operations.append(Delete())
     # operations.append(Clear())

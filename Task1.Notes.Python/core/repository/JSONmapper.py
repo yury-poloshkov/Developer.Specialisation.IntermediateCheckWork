@@ -15,11 +15,9 @@ class JSONmapper:
     def from_json(record):
         record = json.loads(record)
         try:
-            index = Note(record["index"])
-            date = Note(record["date"])
-            title = Note(record["title"])
-            body = Note(record["body"])
-            note = Note(index, date, title, body)
-            return note
+            return Note(record["index"], 
+                        record["date"], 
+                        record["title"], 
+                        record["body"])
         except AttributeError:
             print("Неверная структура")
