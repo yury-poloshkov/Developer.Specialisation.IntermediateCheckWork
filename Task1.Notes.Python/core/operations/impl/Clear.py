@@ -1,16 +1,14 @@
 from ..Operation import Operation
 from ...repository.db_connector import *
 
-from datetime import date
-
 class Clear(Operation):
     operation = "clear"
     def execute(self, path):
         print("\033[H\033[J", end="")
-        print("----- Создание новой заметки -----")
-        note_topic = input("Введите тему: ")
-        note_body = input("Введите содержание: ")
-        index = str(1)
-        today = str(date.today())
-        note = index + "; " + today + "; " + note_topic + "; " + note_body
-        save_note(path, note)
+        print("----- Очистка записной книжки %s -----" %path)
+        confirmation = input("Вы действительно хотите удалить все записи из записной книжки %s (y/n): " %path).lower()
+        if confirmation == "y":
+            no_notes = list()
+            save_all(path, no_notes)
+            print("Записная книжка %s очищена" %path)
+        else: print("Операция очистки записной книжки %s отменена" %path)

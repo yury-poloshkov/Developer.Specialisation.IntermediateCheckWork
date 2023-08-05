@@ -16,7 +16,7 @@ def init_functions(operations):
     # operations.append(Read())
     # operations.append(Change())
     # operations.append(Delete())
-    # operations.append(Clear())
+    operations.append(Clear())
     operations.append(Operation())
 
 def main():

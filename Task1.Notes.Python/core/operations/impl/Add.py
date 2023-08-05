@@ -1,4 +1,3 @@
-from core.repository.JSONmapper import JSONmapper
 from core.repository.Note import Note
 from ..Operation import Operation
 from ...repository.db_connector import *
@@ -7,22 +6,21 @@ from datetime import date
 
 class Add(Operation):
 
-    operation = "create"
+    operation = "new"
 
     def execute(self, path):
         print("\033[H\033[J", end="")
         print("----- Создание новой заметки -----")
         note_topic = input("Введите тему: ")
         note_body = input("Введите содержание: ")
-        records = read_all(path)
-        # if records != null:
-        #     last_note = JSONmapper.from_json(records.pop)
-
         index = str(1)
-        today = str(date.today())
-        note = Note(index, today, note_topic, note_body)
+        notes = read_all(path)
+        if len(notes) != 0:
+            last_note = (notes.pop())
+            index = str(int(last_note.index)+1)
+        note = Note(index, str(date.today()), note_topic, note_body)
         try:
-            save_note(path, JSONmapper.to_json(note))
-            print("Информация успешно сохранена в " + path)
+            save_note(path, note)
+            print("Информация успешно сохранена в %s" %path)
         except IOError:
             print("ERROR: ошибка сохранения данных")
