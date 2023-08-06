@@ -14,7 +14,7 @@ def init_functions(operations):
     operations.append(List())
     operations.append(Add())
     operations.append(Find())
-    # operations.append(Change())
+    operations.append(Change())
     operations.append(Delete())
     operations.append(Clear())
     operations.append(Operation())
