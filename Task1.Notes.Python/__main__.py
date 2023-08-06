@@ -6,14 +6,14 @@ from core.operations.impl.Change import Change
 from core.operations.impl.Clear import Clear
 from core.operations.impl.Delete import Delete
 from core.operations.impl.List import List
-from core.operations.impl.Read import Read
+from core.operations.impl.Find import Find
 from core.operations.Operation import Operation
 
 
 def init_functions(operations):
     operations.append(List())
     operations.append(Add())
-    # operations.append(Read())
+    operations.append(Find())
     # operations.append(Change())
     # operations.append(Delete())
     operations.append(Clear())

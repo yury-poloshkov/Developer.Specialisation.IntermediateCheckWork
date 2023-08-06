@@ -12,6 +12,8 @@ class Add(Operation):
         print("\033[H\033[J", end="")
         print("----- Создание новой заметки -----")
         note_topic = input("Введите тему: ")
+        while len(note_topic) == 0:
+            note_topic = input("Тема заметки не может быть пустой, повторите ввод: ")
         note_body = input("Введите содержание: ")
         index = str(1)
         notes = read_all(path)

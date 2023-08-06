@@ -12,5 +12,4 @@ class List(Operation):
             notes.sort(key=Note.get_date, reverse = True)
             for note in notes:
                 print(note)
-        else: print("Заметок в записной книжке %s не обнаружено" %path)
-        
+        else: print("Заметок в записной книжке %s не обнаружено" %path)        
