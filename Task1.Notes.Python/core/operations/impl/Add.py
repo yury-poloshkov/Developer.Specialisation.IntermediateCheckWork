@@ -22,7 +22,7 @@ class Add(Operation):
             index = str(int(last_note.index)+1)
         note = Note(index, str(date.today()), note_topic, note_body)
         try:
-            save_note(path, note)
+            save_record(path, note)
             print("Информация успешно сохранена в %s" %path)
         except IOError:
             print("ERROR: ошибка сохранения данных")

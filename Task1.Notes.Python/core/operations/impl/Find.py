@@ -25,7 +25,5 @@ class Find(Operation):
             found_notes.sort(key=Note.get_date, reverse = True)
             for note in found_notes:
                 print(note)
-            return found_notes
         else: 
             print("Заметок, соответсвующих критерию поиска, не обнаружено")
-            return None

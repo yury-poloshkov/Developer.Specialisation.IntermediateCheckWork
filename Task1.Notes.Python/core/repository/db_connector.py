@@ -12,18 +12,18 @@ def create(path):
 
 def read_all(path):
     file = open(path, 'r')
-    notes = list()
+    records = list()
     for line in file:
-        notes.append(JSONmapper.from_json(line))
+        records.append(JSONmapper.from_json(line))
     file.close()
-    return notes
+    return records
 
-def save_all(path, notes):
+def save_all(path, records):
     file = open(path, 'w')
-    file.writelines("%s\n" % JSONmapper.to_json(note) for note in notes)
+    file.writelines("%s\n" % JSONmapper.to_json(record) for record in records)
     file.close()
 
-def save_note(path, new_note):
+def save_record(path, new_record):
     file = open(path, 'a')
-    file.write(JSONmapper.to_json(new_note) + "\n")
+    file.write(JSONmapper.to_json(new_record) + "\n")
     file.close()    
