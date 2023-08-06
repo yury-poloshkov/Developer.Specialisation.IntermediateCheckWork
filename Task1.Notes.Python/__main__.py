@@ -23,7 +23,7 @@ def main():
     print("\033[H\033[J", end="")
     path = input("Введите имя Вашей записной книжки: ") + ".json"
     if path == ".json":
-        path = "notes.txt" 
+        path = "notes.json" 
     create(path)
     operations = []
     init_functions(operations)

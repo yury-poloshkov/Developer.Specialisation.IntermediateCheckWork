@@ -1,6 +1,5 @@
 from core.repository.JSONmapper import JSONmapper
 
-
 def create(path):
     try:
         file = open(path, 'r')
