@@ -6,13 +6,19 @@ public class Toy {
     private final String name;
     private Integer count;
 
+    public Toy(Integer id, String name, Integer count) {
+        this.id = id;
+        this.name = name;
+        this.count = count;
+    }
+
     public Toy(String name, Integer count) {
         this.name = name;
         this.count = count;
     }
 
     public Toy(String name) {
-        this(name, null);
+        this(name, 0);
     }
 
     public void setCount(Integer count) {
@@ -33,10 +39,8 @@ public class Toy {
 
     @Override
     public String toString() {
-        return "Toy{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", count=" + count +
-                '}';
+        return  "id=" + id +
+                ", наименование='" + name + '\'' +
+                ", количество=" + count;
     }
 }

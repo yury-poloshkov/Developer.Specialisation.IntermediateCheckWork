@@ -25,6 +25,19 @@ public class DBConnector {
             System.err.println(e);
         }
     }
+
+    public boolean add(List<String> lines) {
+        try (FileWriter writer = new FileWriter(path, true)) {
+            for (String line : lines) {
+                writer.write(line + '\n');
+            }
+            writer.flush();
+            return true;
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
     public boolean saveAll(List<String> lines) {
         try (FileWriter writer = new FileWriter(path, false)) {
             for (String line : lines) {
@@ -57,5 +70,16 @@ public class DBConnector {
             e.printStackTrace();
         }
         return lines;
+    }
+    public int newIndex(){
+        return readAll().size()+1;
+    }
+
+    public boolean isExist(String name){
+        List<String> storage = readAll();
+        for (String line: storage) {
+            if (line.contains(name)) return true;
+        }
+        return false;
     }
 }

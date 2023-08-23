@@ -6,7 +6,7 @@ import java.util.Scanner;
 public interface Operation {
 //    String header = null;
 //    ArrayList<Operation> options = null;
-    default void run() {};
+    default void run() {}
 //        String userChoice = "None";
 //        while (!userChoice.equals("EXIT")) {
 //            showMenu(header, options);
@@ -20,7 +20,7 @@ public interface Operation {
 
 
     default void showMenu(String header, ArrayList<Operation> options){
-        System.out.println("\033[H\033[2J");
+        System.out.println("\033[H\033[J");
         System.out.flush();
         String sb = header + "\n";
         for (Operation option : options){

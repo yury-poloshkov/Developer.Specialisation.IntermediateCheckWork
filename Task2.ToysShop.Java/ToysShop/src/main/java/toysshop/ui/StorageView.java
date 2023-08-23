@@ -21,6 +21,7 @@ public class StorageView implements Operation {
             for (Operation option : options) {
                 if (userChoice.equals(option.toString())) {
                     option.run();
+                    timeOut();
                 }
             }
             showMenu(header, options);
