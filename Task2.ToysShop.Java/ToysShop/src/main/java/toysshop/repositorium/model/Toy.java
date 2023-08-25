@@ -3,7 +3,7 @@ package toysshop.repositorium.model;
 public class Toy {
 
     private Integer id;
-    private final String name;
+    private String name;
     private Integer count;
 
     public Toy(Integer id, String name, Integer count) {
@@ -17,12 +17,23 @@ public class Toy {
         this.count = count;
     }
 
+    public Toy() {
+    }
+
     public Toy(String name) {
         this(name, 0);
     }
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {

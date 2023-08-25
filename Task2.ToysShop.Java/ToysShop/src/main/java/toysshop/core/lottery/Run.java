@@ -5,10 +5,16 @@ import toysshop.repositorium.DBConnector;
 
 public class Run implements Operation {
     private String command = "RUN";
-    private DBConnector db;
+    private DBConnector lotteryDB;
+    private DBConnector storageDB;
 
-    public Run(DBConnector db) {
-        this.db = db;
+    public Run(DBConnector lotteryDB, DBConnector storageDB) {
+        this.lotteryDB = lotteryDB;
+        this.storageDB = storageDB;
+    }
+
+    public Run(DBConnector lotteryDB) {
+        this.lotteryDB = lotteryDB;
     }
 
     @Override

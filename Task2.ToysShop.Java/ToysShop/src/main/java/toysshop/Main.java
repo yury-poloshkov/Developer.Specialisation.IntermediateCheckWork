@@ -11,13 +11,14 @@ import toysshop.ui.LotteryView;
 import toysshop.ui.MainView;
 import toysshop.ui.StorageView;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         String storagePath = "storage.json";
         DBConnector storageDB = new DBConnector(storagePath);
-        String lotteryPath = "lottery.json";
+        String lotteryPath = "lottery"+ LocalDate.now() + ".json";
         DBConnector lotteryDB = new DBConnector(lotteryPath);
         Operation mainMenu = new MainView(initUI(storageDB, lotteryDB));
         mainMenu.run();
@@ -26,15 +27,15 @@ public class Main {
     private static ArrayList<Operation> initUI(DBConnector storageDB, DBConnector lotteryDB) {
         ArrayList<Operation> mainUI = new ArrayList<>();
         mainUI.add(new StorageView(initStorage(storageDB)));
-        mainUI.add(new LotteryView(initLottery(lotteryDB)));
+        mainUI.add(new LotteryView(initLottery(lotteryDB,storageDB)));
         mainUI.add(new MainView(null));
         return mainUI;
     }
 
-    private static ArrayList<Operation> initLottery(DBConnector lotteryDB) {
+    private static ArrayList<Operation> initLottery(DBConnector lotteryDB, DBConnector storageDB) {
         ArrayList<Operation> lotteryUI = new ArrayList<>();
-        lotteryUI.add(new SetPrizes(lotteryDB));
-        lotteryUI.add(new Run(lotteryDB));
+        lotteryUI.add(new SetPrizes(lotteryDB,storageDB));
+        lotteryUI.add(new Run(lotteryDB,storageDB));
         lotteryUI.add(new MainView(null));
         return lotteryUI;
     }
