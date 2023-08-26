@@ -3,13 +3,12 @@ package toysshop.ui;
 import toysshop.core.Operation;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainView implements Operation {
-    private String command = "EXIT";
-    private String header = "----- Магазин игрушек v.2023.08.20 -----\n" +
+    private final String command = "EXIT";
+    private final String header = "----- Магазин игрушек v.2023.08.20 -----\n" +
             "--- ГЛАВНОЕ МЕНЮ: ---";
-    private ArrayList<Operation> options;
+    private final ArrayList<Operation> options;
 
     public MainView(ArrayList<Operation> options) {
         this.options = options;

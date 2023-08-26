@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public interface Operation {
-//    String header = null;
-//    ArrayList<Operation> options = null;
-    default void run() {}
+default void run() {}
 //        String userChoice = "None";
 //        while (!userChoice.equals("EXIT")) {
 //            showMenu(header, options);
@@ -22,11 +20,11 @@ public interface Operation {
     default void showMenu(String header, ArrayList<Operation> options){
         System.out.println("\033[H\033[J");
         System.out.flush();
-        String sb = header + "\n";
+        StringBuilder sb = new StringBuilder(header + "\n");
         for (Operation option : options){
-            sb += option.toString() + "\n";
+            sb.append(option.toString()).append("\n");
         }
-        sb += "------------------------------";
+        sb.append("------------------------------");
         System.out.println(sb);
     }
      default String prompt(String message){

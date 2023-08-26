@@ -28,14 +28,6 @@ public class Toy {
         this.count = count;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Integer getId() {
         return id;
     }

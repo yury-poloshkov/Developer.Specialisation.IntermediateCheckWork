@@ -5,10 +5,10 @@ import toysshop.core.Operation;
 import java.util.ArrayList;
 
 public class StorageView implements Operation {
-    private String command = "STORAGE";
-    private String header = "----- Магазин игрушек v.2023.08.20 -----\n" +
+    private final String command = "STORAGE";
+    private final String header = "----- Магазин игрушек v.2023.08.20 -----\n" +
             "--- МЕНЮ УПРАВЛЕНИЯ ЗАПАСАМИ ---";
-    private ArrayList<Operation> options;
+    private final ArrayList<Operation> options;
 
     public StorageView(ArrayList<Operation> options) {
         this.options = options;

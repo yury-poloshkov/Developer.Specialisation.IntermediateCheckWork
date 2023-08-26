@@ -22,33 +22,30 @@ public class DBConnector {
             }
         }
         catch (Exception e) {
+            //noinspection ThrowablePrintedToSystemOut
             System.err.println(e);
         }
     }
 
-    public boolean add(List<String> lines) {
+    public void add(List<String> lines) {
         try (FileWriter writer = new FileWriter(path, true)) {
             for (String line : lines) {
                 writer.write(line + '\n');
             }
             writer.flush();
-            return true;
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        return false;
     }
-    public boolean saveAll(List<String> lines) {
+    public void saveAll(List<String> lines) {
         try (FileWriter writer = new FileWriter(path, false)) {
             for (String line : lines) {
                 writer.write(line + '\n');
             }
             writer.flush();
-            return true;
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        return false;
     }
     public List<String> readAll() {
         List<String> lines = new ArrayList<>();
@@ -67,6 +64,7 @@ public class DBConnector {
             }
             fr.close();
         } catch (IOException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         }
         return lines;

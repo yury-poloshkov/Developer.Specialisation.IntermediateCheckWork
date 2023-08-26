@@ -20,6 +20,7 @@ public class SetPrizes implements Operation {
         this.storageDB = storageDB;
     }
     public void run(){
+        System.out.println("\033[H\033[2J");
         System.out.println("----- ФОРМИРОВАНИЕ ПРИЗОВОГО ФОНДА -----");
         List<String> currentStock = storageDB.readAll();
         if (!currentStock.isEmpty()){

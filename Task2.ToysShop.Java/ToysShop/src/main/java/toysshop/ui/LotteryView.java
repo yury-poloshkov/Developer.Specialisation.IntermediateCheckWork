@@ -5,18 +5,14 @@ import toysshop.core.Operation;
 import java.util.ArrayList;
 
 public class LotteryView implements Operation {
-    private String command = "LOTTERY";
+    private final String command = "LOTTERY";
 
-    private String header = "----- Магазин игрушек v.2023.08.20 -----\n" +
+    private final String header = "----- Магазин игрушек v.2023.08.20 -----\n" +
             "--- МЕНЮ ОРГАНИЗАЦИИ РОЗЫГРЫША ---";
-    private ArrayList<Operation> options;
+    private final ArrayList<Operation> options;
 
     public LotteryView(ArrayList<Operation> options) {
         this.options = options;
-    }
-
-    public String getCommand() {
-        return command;
     }
 
     public void run(){

@@ -8,8 +8,8 @@ import toysshop.repositorium.model.Toy;
 import java.util.List;
 
 public class ShowAll implements Operation {
-    private String command = "LIST";
-    private DBConnector db;
+    private final String command = "LIST";
+    private final DBConnector db;
 
     public ShowAll(DBConnector db) {
         this.db = db;
